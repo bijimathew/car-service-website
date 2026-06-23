@@ -8,7 +8,10 @@ const servicesList = [
   { id: 'paint', name: 'Paint Correction' },
   { id: 'bodywork', name: 'Bodywork & Resprays' },
   { id: 'wheel', name: 'Wheel Colour Change' },
-  { id: 'tints', name: 'Tints' }
+  { id: 'tints', name: 'Tints' },
+  { id: 'mot', name: 'MOT' },
+  { id: 'mechanic', name: 'Mechanic' },
+  { id: 'tyres', name: 'Tyres' }
 ];
 
 export default function BookingForm() {

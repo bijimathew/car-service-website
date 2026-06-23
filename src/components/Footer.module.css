@@ -11,6 +11,13 @@
   margin-bottom: var(--spacing-xl);
 }
 
+.logoImage {
+  height: 60px;
+  width: auto;
+  margin-bottom: var(--spacing-sm);
+  object-fit: contain;
+}
+
 .brand h2 {
   font-size: 2rem;
   margin-bottom: var(--spacing-sm);
@@ -18,7 +25,8 @@
 }
 
 .brand span {
-  color: var(--text-accent);
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--accent-primary);
 }
 
 .brand p {
@@ -90,6 +98,10 @@
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
     text-align: center;
+  }
+
+  .logoImage {
+    margin: 0 auto var(--spacing-sm);
   }
 
   .brand h2 {

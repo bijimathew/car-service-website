@@ -3,6 +3,7 @@
   max-width: 900px;
   margin: 0 auto;
   border: 1px solid var(--border-light);
+  border-radius: 20px;
   background: var(--bg-card);
 }
 
@@ -28,6 +29,7 @@
 .serviceCard {
   background: var(--bg-primary);
   border: 1px solid var(--border-light);
+  border-radius: 12px;
   padding: var(--spacing-md);
   display: flex;
   align-items: center;
@@ -50,6 +52,7 @@
   width: 20px;
   height: 20px;
   border: 1px solid var(--border-light);
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
