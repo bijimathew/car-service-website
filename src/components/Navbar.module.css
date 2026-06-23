@@ -238,8 +238,8 @@
     pointer-events: none;
   }
 
-  .logoRight {
-    /* 100vw minus 100% (its own width) minus 2rem (1rem padding on each side) */
-    transform: translateX(calc(100vw - 100% - 2rem));
+  .logoHidden {
+    opacity: 0;
+    pointer-events: none;
   }
 }

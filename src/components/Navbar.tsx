@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.navContainer}>
-        <Link href="/" className={`${styles.logo} ${isMobileMenuOpen ? styles.logoRight : ''}`} onClick={closeMenu}>
+        <Link href="/" className={`${styles.logo} ${isMobileMenuOpen ? styles.logoHidden : ''}`} onClick={closeMenu}>
           <img src="/logo_wd.png" alt="Wicked Car Detailing Logo" className={styles.logoImage} />
         </Link>
         

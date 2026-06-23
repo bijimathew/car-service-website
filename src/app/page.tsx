@@ -41,7 +41,9 @@ export default function Home() {
               Wicked<br /><span>Detailing</span>
             </h1>
             <p className={styles.heroSubtitle}>
-              
+              VEHICLE APPEARANCE<br />
+              AND
+              <br></br> COSMETIC WORK
             </p>
             <div className={styles.heroActions}>
               <div className={styles.locationBadge}>

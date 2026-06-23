@@ -50,24 +50,27 @@
 
 .heroTitle {
   font-size: clamp(3.5rem, 8vw, 7rem);
-  line-height: 0.9;
-  margin-bottom: var(--spacing-lg);
-  margin-bottom: 5rem;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
 }
 
 .heroTitle span {
   color: transparent;
-  -webkit-text-stroke: 2px var(--text-primary);
+  -webkit-text-stroke: 2px var(--accent-primary);
 }
 
 .heroSubtitle {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
+  font-size: clamp(2rem, 10vw, 4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
   margin: 0 auto var(--spacing-xl);
-  max-width: 800px;
-  text-transform: none;
-  font-weight: 400;
+  line-height: 1.1;
+  width: 100%;
+  letter-spacing: 2px;
 }
+
+
 
 .heroActions {
   display: flex;
@@ -103,69 +106,54 @@
 
 /* Services Section */
 .servicesSection {
-  background: var(--bg-secondary);
+  background: var(--bg-primary); /* Darker background */
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 0;
-  border-top: 1px solid var(--border-light);
-  border-left: 1px solid var(--border-light);
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6rem;
+  row-gap: 4rem;
+  margin-top: 4rem;
 }
 
 .serviceCard {
-  padding: var(--spacing-xl) var(--spacing-lg);
+  padding: 0.5rem 0 0.5rem 2rem;
   border: none;
-  border-right: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
+  border-left: 2px solid var(--accent-primary);
   position: relative;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
   background: transparent;
+  display: flex;
+  flex-direction: column;
 }
 
 .serviceCard:hover {
-  background: var(--bg-primary);
+  border-left-width: 4px;
 }
 
 .serviceNumber {
-  font-size: 4rem;
-  font-weight: 900;
-  color: var(--bg-card);
-  -webkit-text-stroke: 1px var(--border-light);
-  margin-bottom: var(--spacing-md);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
   line-height: 1;
 }
 
-.serviceCard:hover .serviceNumber {
-  color: var(--text-accent);
-  -webkit-text-stroke: 0;
-}
-
 .serviceCard h3 {
-  font-size: 1.5rem;
-  margin-bottom: var(--spacing-sm);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
 .serviceCard p {
   color: var(--text-secondary);
-  font-size: 0.95rem;
-  text-transform: none;
-  font-weight: 400;
-}
-
-.cardLine {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--accent-primary);
-  transition: width 0.3s ease;
-}
-
-.serviceCard:hover .cardLine {
-  width: 100%;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 /* Gallery Section */
@@ -248,6 +236,10 @@
     grid-auto-rows: 220px;
   }
 
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
   .galleryLarge {
     grid-column: span 2;
     grid-row: span 1;
@@ -264,7 +256,7 @@
     min-height: auto;
     height: auto;
     padding-top: 120px;
-    padding-bottom: 60px;
+    padding-bottom: 90px; /* Reduced to bring button closer to the black strip */
     /* Center the background image and use a stronger overlay for readability */
     background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.7) 50%, rgba(5, 5, 5, 0.95) 100%), url('/hero-bg.jpg');
     background-position: center center;
@@ -291,24 +283,64 @@
     -webkit-text-stroke-width: 1px;
   }
 
-  .heroSubtitle {
-    font-size: 1rem;
-    margin: 0 auto var(--spacing-lg);
-  }
 
   .heroActions {
     flex-direction: column;
-    align-items: stretch;
-    gap: var(--spacing-sm);
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+  }
+  
+  .locationBadge {
+    width: auto;
+    padding: 10px 18px;
+    font-size: 0.8rem;
   }
 
-  /* Services */
+  .hero::after {
+    height: 40px;
+  }
+
+  /* Services Slider for Mobile */
+  .servicesSection {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    overflow: hidden; /* Prevent horizontal scroll on body */
+  }
+
   .servicesGrid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    gap: 1.5rem;
+    padding-bottom: 2rem; /* Space for scrollbar */
+    margin-top: 2rem;
+    /* Hide scrollbar for cleaner look */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+  }
+  
+  .servicesGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .serviceCard {
+    flex: 0 0 85%; /* Take up 85% of screen width so next card peeks in */
+    scroll-snap-align: center;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    background: var(--bg-card); /* Add slight background so cards pop out in slider */
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--accent-primary);
+    border-radius: 12px;
   }
 
   .serviceNumber {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .serviceCard h3 {
