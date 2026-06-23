@@ -1,0 +1,215 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+  padding: 10px 0;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 1001; /* To stay above mobile overlay */
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(0);
+}
+
+.logoImage {
+  height: 50px; /* Adjust height as needed to fit the header */
+  width: auto;
+  object-fit: contain;
+}
+
+.navDesktop {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.navLink {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--text-accent);
+  transition: width 0.2s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.actionsDesktop {
+  display: block;
+}
+
+.bookBtn {
+  font-size: 0.8rem;
+  padding: 12px 24px;
+}
+
+/* Mobile Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001; /* Stay above overlay */
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+  transform-origin: left;
+}
+
+/* Mobile Sidebar */
+.sidebarBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.backdropOpen {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sidebarPanel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 85%;
+  max-width: 350px;
+  height: 100vh;
+  background: #111111; /* Dark background matching screenshot */
+  z-index: 1001;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+.closeBtn {
+  align-self: flex-end;
+  color: #fff;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.sidebarNavList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebarNavLink {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.sidebarNavLink:hover {
+  color: #fff;
+}
+
+.sidebarNavLink.active {
+  font-weight: 700;
+  color: #fff;
+}
+
+.accountHeading {
+  font-size: 0.9rem;
+  color: #888;
+  text-transform: none;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.sidebarAccountSection {
+  margin-top: 1rem;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .navDesktop, .actionsDesktop {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburgerHidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .logoRight {
+    /* 100vw minus 100% (its own width) minus 2rem (1rem padding on each side) */
+    transform: translateX(calc(100vw - 100% - 2rem));
+  }
+}

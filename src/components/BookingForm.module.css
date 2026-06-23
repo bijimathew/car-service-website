@@ -1,0 +1,156 @@
+.bookingContainer {
+  padding: var(--spacing-xl);
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+  font-size: 1.1rem;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.serviceCard {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.serviceCard:hover {
+  border-color: var(--text-secondary);
+}
+
+.serviceCard.selected {
+  border-color: var(--accent-primary);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.serviceCard.selected .checkbox {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.checkIcon {
+  color: #000;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.customCard {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.customCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.customLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specifyText {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.customInput {
+  width: 100%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  padding: 12px 15px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.customInput:focus {
+  border-color: var(--accent-primary);
+}
+
+.customInput::placeholder {
+  color: var(--text-secondary);
+}
+
+.quoteBtn {
+  width: 100%;
+  font-size: 1rem;
+  padding: 18px 30px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .bookingContainer {
+    padding: var(--spacing-lg) var(--spacing-md);
+    border-left: none;
+    border-right: none;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .serviceCard {
+    padding: 14px;
+    font-size: 0.9rem;
+  }
+
+  .quoteBtn {
+    padding: 16px 20px;
+    font-size: 0.9rem;
+  }
+}
