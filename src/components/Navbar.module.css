@@ -13,7 +13,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: auto;
+  min-height: 80px;
+  width: 100%;
+  padding: 0 var(--spacing-xl);
 }
 
 .logo {
@@ -26,7 +29,7 @@
 }
 
 .logoImage {
-  height: 50px; /* Adjust height as needed to fit the header */
+  height: 80px; /* Larger on desktop */
   width: auto;
   object-fit: contain;
 }
@@ -69,7 +72,25 @@
 }
 
 .actionsDesktop {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.iconBtn:hover {
+  color: var(--text-primary);
 }
 
 .bookBtn {
@@ -195,6 +216,15 @@
 
 /* Responsive Breakpoints */
 @media (max-width: 900px) {
+  .navContainer {
+    min-height: 60px;
+    padding: 0 var(--spacing-md);
+  }
+
+  .logoImage {
+    height: 50px;
+  }
+
   .navDesktop, .actionsDesktop {
     display: none;
   }

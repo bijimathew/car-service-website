@@ -101,7 +101,7 @@ button {
   background: var(--text-primary);
   color: var(--bg-primary);
   padding: 16px 32px;
-  border-radius: 0;
+  border-radius: 2rem;
   font-weight: 700;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -138,10 +138,10 @@ button {
 .btn-whatsapp {
   background: #1f2020; /* gray-700 */
   color: #fefce8; /* cream white */
-  padding: 16px 32px;
+  padding: 14px 40px;
   border-radius: 2rem; /* rounded-xl */
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: all 0.2s ease;
@@ -149,10 +149,11 @@ button {
   align-items: center;
   justify-content: center;
   border: 1px solid #4b5563;
+  width: 100%;
 }
 
 .btn-whatsapp:hover {
-  background: #4b5563; /* gray-600 */
+  background: #1a1b1b; /* gray-600 */
   color: #ffffff;
 }
 

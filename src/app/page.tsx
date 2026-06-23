@@ -36,12 +36,12 @@ export default function Home() {
       <section className={styles.hero} id="home">
         <div className={`container ${styles.heroContent} animate-slide-up`}>
           <div className={styles.heroTextWrap}>
-            <p className={styles.heroEyebrow}>Precision & Performance</p>
+            <p className={styles.heroEyebrow}></p>
             <h1 className={styles.heroTitle}>
               Wicked<br /><span>Detailing</span>
             </h1>
             <p className={styles.heroSubtitle}>
-              Unleash the ultimate shine. Premium ceramic coating, paint correction, and custom automotive styling.
+              
             </p>
             <div className={styles.heroActions}>
               <div className={styles.locationBadge}>
