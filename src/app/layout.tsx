@@ -7,8 +7,8 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Wicked Car Detailing | Premium Ceramic Coating & Paint Correction",
-  description: "Wicked Car Detailing offers top-tier ceramic coating, paint correction, resprays, wheel colour changes, and window tints for a flawless vehicle finish.",
+  title: "slough Autos | Premium Ceramic Coating & Paint Correction",
+  description: "slough Autos offers top-tier ceramic coating, paint correction, resprays, wheel colour changes, and window tints for a flawless vehicle finish.",
 };
 
 export default function RootLayout({

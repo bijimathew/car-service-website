@@ -60,7 +60,7 @@
 }
 
 .heroSubtitle {
-  font-size: clamp(2rem, 10vw, 4rem);
+  font-size: clamp(1.2rem, 3vw, 2rem);
   font-weight: 700;
   text-transform: uppercase;
   color: #ffffff;
@@ -68,6 +68,10 @@
   line-height: 1.1;
   width: 100%;
   letter-spacing: 2px;
+}
+
+.heroSubtitle br {
+  display: none;
 }
 
 
@@ -294,6 +298,10 @@
 
   .heroTitle span {
     -webkit-text-stroke-width: 1px;
+  }
+
+  .heroSubtitle br {
+    display: block;
   }
 
 

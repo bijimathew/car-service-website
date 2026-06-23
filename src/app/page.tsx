@@ -53,12 +53,12 @@ export default function Home() {
           <div className={styles.heroTextWrap}>
             <p className={styles.heroEyebrow}></p>
             <h1 className={styles.heroTitle}>
-              Wicked<br /><span>Detailing</span>
+              slough<br /><span>Autos</span>
             </h1>
             <p className={styles.heroSubtitle}>
-              VEHICLE APPEARANCE<br />
-              AND
-              <br></br> COSMETIC WORK
+              VEHICLE APPEARANCE <br />
+              AND <br />
+              COSMETIC WORK
             </p>
             <div className={styles.heroActions}>
               <div className={styles.locationBadge}>

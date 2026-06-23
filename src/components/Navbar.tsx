@@ -28,7 +28,7 @@ export default function Navbar() {
     <header className={styles.header}>
       <div className={styles.navContainer}>
         <Link href="/" className={`${styles.logo} ${isMobileMenuOpen ? styles.logoHidden : ''}`} onClick={closeMenu}>
-          <img src="/logo_wd.png" alt="Wicked Car Detailing Logo" className={styles.logoImage} />
+          <img src="/logo_wd.png" alt="slough Autos Logo" className={styles.logoImage} />
         </Link>
         
         {/* Desktop Navigation */}

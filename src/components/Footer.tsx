@@ -6,8 +6,8 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.footerGrid}`}>
         <div className={styles.brand}>
-          <img src="/logo_wd.png" alt="Wicked Car Detailing Logo" className={styles.logoImage} />
-          <h2>Wicked <span>Detailing</span></h2>
+          <img src="/logo_wd.png" alt="slough Autos Logo" className={styles.logoImage} />
+          <h2>slough <span>Autos</span></h2>
           <p>Premium car detailing services ensuring long-term gloss and paint protection</p>
         </div>
         
@@ -23,13 +23,13 @@ export default function Footer() {
         
         <div className={styles.contact}>
           <h3>Contact Us</h3>
-          <p>Email: info@wickeddetailing.com</p>
+          <p>Email: info@sloughautos.com</p>
           <p>Phone: +1 234 567 890</p>
         </div>
       </div>
       
       <div className={styles.bottomBar}>
-        <p>&copy; {new Date().getFullYear()} Wicked Car Detailing<br></br>All Rights Reserved</p>
+        <p>&copy; {new Date().getFullYear()} slough Autos<br></br>All Rights Reserved</p>
       </div>
     </footer>
   );

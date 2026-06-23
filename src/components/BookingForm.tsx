@@ -38,7 +38,7 @@ export default function BookingForm() {
       messageServices.push(`Other: ${customServiceText.trim()}`);
     }
 
-    const message = `Hi Wicked Detailing, I would like to get a quote for the following services:\n\n${messageServices.map(s => `- ${s}`).join('\n')}`;
+    const message = `Hi slough Autos, I would like to get a quote for the following services:\n\n${messageServices.map(s => `- ${s}`).join('\n')}`;
     const encodedMessage = encodeURIComponent(message);
     
     // Placeholder number - user will update this later
