@@ -1,0 +1,118 @@
+.page {
+  width: 100%;
+  padding-top: 100px;
+}
+
+/* Services Section */
+.servicesSection {
+  background: var(--bg-primary);
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6rem;
+  row-gap: 4rem;
+  margin-top: 4rem;
+}
+
+.serviceCard {
+  padding: 0.5rem 0 0.5rem 2rem;
+  border: none;
+  border-left: 2px solid var(--accent-primary);
+  position: relative;
+  transition: all 0.3s ease;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceCard:hover {
+  border-left-width: 4px;
+}
+
+.serviceNumber {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.serviceCard h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.serviceCard p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .page {
+    padding-top: 80px;
+  }
+
+  .servicesSection {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    overflow: hidden;
+  }
+
+  .servicesGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .servicesGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .serviceCard {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--accent-primary);
+    border-radius: 12px;
+  }
+
+  .serviceNumber {
+    font-size: 3rem;
+  }
+
+  .serviceCard h3 {
+    font-size: 1.2rem;
+  }
+
+  .serviceCard p {
+    font-size: 0.85rem;
+  }
+}

@@ -78,19 +78,39 @@
 }
 
 .iconBtn {
-  background: none;
+  background: transparent;
   border: none;
+  color: var(--text-primary);
   cursor: pointer;
-  color: var(--text-secondary);
-  transition: color 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .iconBtn:hover {
-  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-primary);
+}
+
+.cartBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--accent-primary);
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(25%, -25%);
 }
 
 .bookBtn {

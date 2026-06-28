@@ -1,0 +1,16 @@
+.page {
+  width: 100%;
+  padding-top: 100px;
+}
+
+.bookingSection {
+  background: var(--bg-primary);
+  padding-bottom: 4rem;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .page {
+    padding-top: 80px;
+  }
+}

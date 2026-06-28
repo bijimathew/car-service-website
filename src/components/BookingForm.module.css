@@ -7,10 +7,15 @@
   background: var(--bg-card);
 }
 
-.title {
-  font-size: 2.5rem;
-  margin-bottom: var(--spacing-sm);
-  color: var(--text-primary);
+.bookingTitleWrapper h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.bookingTitleWrapper span {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--accent-primary);
 }
 
 .subtitle {

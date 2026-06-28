@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Link from "next/link";
 import BookingForm from "@/components/BookingForm";
 
 const services = [
@@ -16,31 +17,6 @@ const services = [
     number: "03",
     title: "Bodywork & Resprays",
     description: "Cosmetic smart repairs and full panel resprays for a flawless, pristine look",
-  },
-  {
-    number: "04",
-    title: "Wheel Colour Change",
-    description: "Gloss, satin and custom finishes to make your wheels stand out from the crowd",
-  },
-  {
-    number: "05",
-    title: "Window Tints",
-    description: "Premium window and light styling tints for maximum privacy and striking aesthetics",
-  },
-  {
-    number: "06",
-    title: "MOT",
-    description: "Full MOT testing to ensure your vehicle meets all road safety and environmental standards",
-  },
-  {
-    number: "07",
-    title: "Mechanic",
-    description: "Professional mechanical repairs, servicing, and diagnostics for all makes and models",
-  },
-  {
-    number: "08",
-    title: "Tyres",
-    description: "Premium tyre fitting, balancing, and alignment to keep you safe on the road",
   },
 ];
 
@@ -68,14 +44,14 @@ export default function Home() {
                 </svg>
                 <span>Slough | Berkshire</span>
               </div>
-              <a href="#booking" className="btn-whatsapp">WhatsApp for a Quote</a>
+              <Link href="/contact" className="btn-whatsapp">WhatsApp for a Quote</Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className={`section ${styles.servicesSection}`} id="services">
+      {/* Services Teaser Section */}
+      <section className={`section ${styles.servicesSection}`}>
         <div className="container">
           <h2 className="section-title">Our Services</h2>
           <div className={styles.servicesGrid}>
@@ -88,32 +64,41 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className={styles.viewAllWrapper}>
+            <Link href="/services" className={styles.viewAllLink}>
+              View All Services
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className={`section ${styles.gallerySection}`} id="gallery">
+      {/* Gallery Teaser Section */}
+      <section className={`section ${styles.gallerySection}`}>
         <div className="container">
           <h2 className="section-title">Gallery</h2>
           <div className={styles.galleryGrid}>
             <div className={`${styles.galleryItem} ${styles.galleryLarge}`}>
-              <img src="/img2.jpg" alt="Detailing work 1" />
+              <img src="/img2.jpg" alt="Premium BMW detailing with ceramic coating" />
             </div>
             <div className={styles.galleryItem}>
-              <img src="/img1.jpg" alt="Detailing work 2" />
+              <img src="/img1.jpg" alt="White Land Rover Defender after full detail" />
             </div>
             <div className={styles.galleryItem}>
-              <img src="/img3.jpg" alt="Detailing work 3" />
+              <img src="/img3.jpg" alt="Professional paint correction results" />
             </div>
-            <div className={styles.galleryItem}>
-              <img src="/img4.jpg" alt="Detailing work 4" />
-            </div>
-            <div className={styles.galleryItem}>
-              <img src="/img5.jpg" alt="Detailing work 5" />
-            </div>
-            <div className={styles.galleryItem}>
-              <img src="/img6.jpg" alt="Detailing work 6" />
-            </div>
+          </div>
+          <div className={styles.viewAllWrapper}>
+            <Link href="/gallery" className={styles.viewAllLink}>
+              View Full Gallery
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
@@ -121,13 +106,7 @@ export default function Home() {
       {/* Booking Section */}
       <section className={`section ${styles.bookingSection}`} id="contact">
         <div className="container">
-          <div className={styles.bookingWrapper}>
-            <div className={styles.bookingInfo}>
-              <h2 className="section-title">PERFECT YOUR CAR</h2>
-              <p>Stop settling for basic washes <br></br>Get the precision detailing, paint correction, and protection your ride deserves<br></br> Let us transform your vehicle into a masterpiece</p>
-            </div>
-            <BookingForm />
-          </div>
+          <BookingForm />
         </div>
       </section>
     </div>

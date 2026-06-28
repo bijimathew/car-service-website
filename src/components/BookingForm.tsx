@@ -50,7 +50,9 @@ export default function BookingForm() {
 
   return (
     <div className={`glass-panel ${styles.bookingContainer}`} id="booking">
-      <h2 className={styles.title}>Book a Service</h2>
+      <div className={styles.bookingTitleWrapper}>
+        <h2 className="section-title">PERFECT<br/><span>YOUR CAR</span></h2>
+      </div>
       <p className={styles.subtitle}>Select the services you need and get a direct quote via WhatsApp.</p>
       
       <div className={styles.servicesGrid}>

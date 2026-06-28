@@ -3,12 +3,14 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { CartProvider } from "@/context/CartContext";
+import CartDrawer from "@/components/CartDrawer";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "slough Autos | Premium Ceramic Coating & Paint Correction",
-  description: "slough Autos offers top-tier ceramic coating, paint correction, resprays, wheel colour changes, and window tints for a flawless vehicle finish.",
+  title: "slough Autos | Vehicle Appearance and Cosmetic Work",
+  description: "Premium vehicle appearance and cosmetic work in Slough, Berkshire.",
 };
 
 export default function RootLayout({
@@ -19,9 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <CartProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   );
